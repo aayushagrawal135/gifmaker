@@ -56,3 +56,17 @@ def vecize(inMat):
 def toGray(filename):
 	gray_img = cv2.cvtColor(filename, cv2.COLOR_RGB2GRAY)
 	return gray_img
+
+# A set of grayscale images
+def meanSubtraction(images):
+	num, rows, cols = np.shape(images)
+	
+	Amean = np.zeros((rows, cols))
+	for i in range(num):
+		Amean = np.add(Amean, images[i])
+	np.divide(Amean, num)
+
+	res = []
+	for i in range(num):
+		res.append(np.subtract(Amean, images[i]))
+	return res

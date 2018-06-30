@@ -7,14 +7,23 @@ def makegif(filenames):
 	images = []
 	for file in filenames:
 		images.append(file)
-	imageio.mimsave(gifname, images)
+	imageio.mimsave(gifname, images, fps = 3)
+
+#---------------------------------------------------------------
 
 filename = "/home/aayush/Downloads/Curiosity/moore/set1/"
 images = []
-for x in range(8):
-	name = filename + str(x) + ".jpg"
+
+for i in range(8):
+	name = filename + str(i) + ".jpg"
 	img = cv2.imread(name)
 	img = sup.toGray(img)
-	img = sup.zStretch(img, 3)
 	images.append(img)
-makegif(images)
+
+images = sup.meanSubtraction(images)
+res = []
+for i in range(8):
+	img = sup.zStretch(images[i], 3)
+	res.append(img)
+
+makegif(res)
