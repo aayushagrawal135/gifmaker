@@ -13,7 +13,7 @@ def makegif(filenames, gifname):
 def wrapper(foldername, gifname, iter = 3, fps = 3):
 	images = []
 
-	for i in range(8):
+	for i in range(4):
 		name = foldername + str(i) + ".jpg"
 		img = cv2.imread(name)
 		img = sup.toGray(img)
@@ -21,15 +21,15 @@ def wrapper(foldername, gifname, iter = 3, fps = 3):
 
 	images = sup.meanSubtraction(images)
 	res = []
-	for i in range(8):
+	for i in range(4):
 		img = sup.zStretch(images[i], 3)
 		res.append(img)
 
 	makegif(res, gifname)
 #-------------------------------------------------
 
-foldername = "/home/aayush/Downloads/Curiosity/moore/set1/"
-gifname = "/home/aayush/Downloads/Curiosity/moore/set1/movie.gif"
+foldername = "/home/aayush/Downloads/Curiosity/moore/1302/"
+gifname = "/home/aayush/Downloads/Curiosity/moore/1302/movie.gif"
 
 #Assumed: There are atleast 8 images names as x.jpg where x lies from 0 to number of images. 
 wrapper(foldername, gifname)
