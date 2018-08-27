@@ -33,3 +33,7 @@ zStretch: Main handler for findMed.
 toGray: Reduce 3 channel image to 1 chaannel image.
 
 meanSubtraction: Normalizes the pixel values. 
+
+### Results
+
+![input image](van.png)
