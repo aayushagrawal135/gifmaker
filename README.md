@@ -36,4 +36,4 @@ meanSubtraction: Normalizes the pixel values.
 
 ### Results
 
-![input image](van.png)
+![input image](van.png width=40 height=100) ![input image](grayVan.png width=40 height=100) ![input image](magicalVan.png width=40 height=100)
